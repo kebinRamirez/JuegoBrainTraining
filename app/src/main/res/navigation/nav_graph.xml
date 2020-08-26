@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.kebinr.navegacionjuegos.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_juegoEmparejamientoFragment"
+            app:destination="@id/juegoEmparejamientoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_juegoMemoriaFragment"
+            app:destination="@id/juegoMemoriaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/juegoEmparejamientoFragment"
+        android:name="com.kebinr.navegacionjuegos.JuegoEmparejamientoFragment"
+        android:label="fragment_juego_emparejamiento"
+        tools:layout="@layout/fragment_juego_emparejamiento" >
+        <action
+            android:id="@+id/action_juegoEmparejamientoFragment_to_score"
+            app:destination="@id/score" />
+    </fragment>
+    <fragment
+        android:id="@+id/juegoMemoriaFragment"
+        android:name="com.kebinr.navegacionjuegos.JuegoMemoriaFragment"
+        android:label="fragment_juego_memoria"
+        tools:layout="@layout/fragment_juego_memoria" >
+        <action
+            android:id="@+id/action_juegoMemoriaFragment_to_score"
+            app:destination="@id/score" />
+    </fragment>
+    <fragment
+        android:id="@+id/score"
+        android:name="com.kebinr.navegacionjuegos.Score"
+        android:label="Score" >
+        <action
+            android:id="@+id/action_score_to_juegoEmparejamientoFragment"
+            app:destination="@id/juegoEmparejamientoFragment" />
+        <action
+            android:id="@+id/action_score_to_juegoMemoriaFragment"
+            app:destination="@id/juegoMemoriaFragment" />
+    </fragment>
+</navigation>
